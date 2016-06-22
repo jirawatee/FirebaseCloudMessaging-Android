@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "50179465152",
+    "firebase_url": "https://jirawatee.firebaseio.com",
+    "project_id": "jirawatee",
+    "storage_bucket": "jirawatee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:50179465152:android:94f0681dc821f130",
+        "android_client_info": {
+          "package_name": "com.example.fcm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "50179465152-uk1oku2q1lifhmoghsmqaqhvcmb2esuk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDcBjPTACpgYUmPJfcMImnUcJ_VJkCbNyM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

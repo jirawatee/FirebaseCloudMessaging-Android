@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:paddingBottom="@dimen/activity_vertical_margin"
+	android:paddingLeft="@dimen/activity_horizontal_margin"
+	android:paddingRight="@dimen/activity_horizontal_margin"
+	android:paddingTop="@dimen/activity_vertical_margin"
+	tools:context="com.example.fcm.MainActivity">
+
+	<ImageView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_above="@+id/zoneB"
+		android:layout_centerHorizontal="true"
+		android:contentDescription="@string/app_name"
+		android:src="@mipmap/firebase_lockup_400"/>
+
+	<LinearLayout
+		android:id="@+id/zoneB"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_centerInParent="true"
+		android:orientation="vertical">
+
+		<Button
+			android:id="@+id/subscribeButton"
+			style="@style/CustomButton"
+			android:text="@string/subscribe_to_news"/>
+
+		<Button
+			android:id="@+id/logTokenButton"
+			style="@style/CustomButton"
+			android:text="@string/log_token"/>
+
+		<Button
+			android:id="@+id/send"
+			style="@style/CustomButton"
+			android:text="@string/send"/>
+
+	</LinearLayout>
+
+</RelativeLayout>
