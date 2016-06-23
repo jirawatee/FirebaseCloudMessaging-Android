@@ -26,7 +26,7 @@ FCM is just a demo of Android Application which implement Firebase Cloud Messagi
 	</tr>
 </table>
 
-## Downstream message syntax
+## My slide
 ```
-https://firebase.google.com/docs/cloud-messaging/http-server-ref#notification-payload-support
+https://docs.google.com/presentation/d/1HPLk1PXaGUjqTlPB6RHsgrTunJNo10kbGZ-JX_7JELw/edit?usp=sharing
 ```
