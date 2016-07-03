@@ -7,7 +7,7 @@ FCM is just a demo of Android Application which implement Firebase Cloud Messagi
 * Android Studio 1.5 or higher
 
 ## Features
-* Subscribe to topics
+* Subscribe and Unsubscribe with topics
 * Get token
 * Send message with payload both **notification** and **data**
 * Send message with **a token**, **token group**, **a topic**, **condition**
