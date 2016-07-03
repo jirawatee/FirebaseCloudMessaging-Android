@@ -6,10 +6,12 @@ import android.os.Looper;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.messaging.FirebaseMessaging;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -20,69 +22,95 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Scanner;
 
+import static com.example.fcm.R.id.txt;
+
 public class MainActivity extends AppCompatActivity {
-	private static final String AUTH_KEY = "key=YOUR KEY SERVER";
-	private static final String TAG = "MainActivity";
+	private static final String AUTH_KEY = "key=YOUR_SERVER_KEY";
+	private TextView mTextView;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		mTextView = (TextView) findViewById(txt);
 
 		Bundle bundle = getIntent().getExtras();
-
 		if (bundle != null) {
+			String tmp = "";
 			for (String key : bundle.keySet()) {
 				Object value = bundle.get(key);
-				Log.d(TAG, "Key: " + key + " Value: " + value.toString());
+				tmp += key + ": " + value + "\n\n";
 			}
+			mTextView.setText(tmp);
 		}
-
-		findViewById(R.id.subscribeButton).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				FirebaseMessaging.getInstance().subscribeToTopic("news");
-				Log.d(TAG, "Subscribed to news topic");
-			}
-		});
-
-		findViewById(R.id.logTokenButton).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				Log.d(TAG, "InstanceID token: " + FirebaseInstanceId.getInstance().getToken());
-			}
-		});
-
-		findViewById(R.id.send).setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				new Thread(new Runnable() {
-					@Override
-					public void run() {
-						pushNotification(FirebaseInstanceId.getInstance().getToken());
-					}
-				}).start();
-			}
-		});
 	}
 
-	private void pushNotification(String token) {
+	public void showToken(View view) {
+		mTextView.setText(FirebaseInstanceId.getInstance().getToken());
+		Log.i("token", FirebaseInstanceId.getInstance().getToken());
+	}
+
+	public void subscribe(View view) {
+		FirebaseMessaging.getInstance().subscribeToTopic("news");
+		mTextView.setText(R.string.subscribed);
+	}
+
+	public void unsubscribe(View view) {
+		FirebaseMessaging.getInstance().unsubscribeFromTopic("news");
+		mTextView.setText(R.string.unsubscribed);
+	}
+
+	public void sendToken(View view) {
+		sendWithOtherThread("token");
+	}
+
+	public void sendTokens(View view) {
+		sendWithOtherThread("tokens");
+	}
+
+	public void sendTopic(View view) {
+		sendWithOtherThread("topic");
+	}
+
+	private void sendWithOtherThread(final String type) {
+		new Thread(new Runnable() {
+			@Override
+			public void run() {
+				pushNotification(type);
+			}
+		}).start();
+	}
+
+	private void pushNotification(String type) {
 		JSONObject jPayload = new JSONObject();
 		JSONObject jNotification = new JSONObject();
 		JSONObject jData = new JSONObject();
 		try {
 			jNotification.put("title", "Google I/O 2016");
-			jNotification.put("text", "Firebase Cloud Messaging (App)");
+			jNotification.put("body", "Firebase Cloud Messaging (App)");
 			jNotification.put("sound", "default");
 			jNotification.put("badge", "1");
 			jNotification.put("click_action", "OPEN_ACTIVITY_1");
 
 			jData.put("picture_url", "http://opsbug.com/static/google-io.jpg");
 
-			jPayload.put("to", token);
-			//jPayload.put("to", "/topics/news");
-			//jPayload.put("condition", "'logined' in topics || 'news' in topics");
-			//jPayload.put("registration_ids", jData);
+			switch(type) {
+				case "tokens":
+					JSONArray ja = new JSONArray();
+					ja.put("c5pBXXsuCN0:APA91bH8nLMt084KpzMrmSWRS2SnKZudyNjtFVxLRG7VFEFk_RgOm-Q5EQr_oOcLbVcCjFH6vIXIyWhST1jdhR8WMatujccY5uy1TE0hkppW_TSnSBiUsH_tRReutEgsmIMmq8fexTmL");
+					ja.put(FirebaseInstanceId.getInstance().getToken());
+					jPayload.put("registration_ids", ja);
+					break;
+				case "topic":
+					jPayload.put("to", "/topics/news");
+					break;
+				case "condition":
+					jPayload.put("condition", "'sport' in topics || 'news' in topics");
+					break;
+				default:
+					jPayload.put("to", FirebaseInstanceId.getInstance().getToken());
+			}
+
 			jPayload.put("priority", "high");
 			jPayload.put("notification", jNotification);
 			jPayload.put("data", jData);
@@ -106,8 +134,7 @@ public class MainActivity extends AppCompatActivity {
 			h.post(new Runnable() {
 				@Override
 				public void run() {
-					Log.e("Response", resp);
-					//txtStatus.setText(resp);
+					mTextView.setText(resp);
 				}
 			});
 		} catch (JSONException | IOException e) {
