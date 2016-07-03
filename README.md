@@ -21,7 +21,7 @@ FCM is just a demo of Android Application which implement Firebase Cloud Messagi
 ## Screenshots
 <table>
 	<tr>
-	  <th><img src="https://cloud.githubusercontent.com/assets/1763410/16266043/04752642-38ad-11e6-9b2b-31a07c3e4cf7.png" width="50%"></th>
+	  <th><img src="https://cloud.githubusercontent.com/assets/1763410/16547014/9f81c04a-4187-11e6-936c-0d901d91b8e5.png" width="50%"></th>
 	  <th><img src="https://cloud.githubusercontent.com/assets/1763410/16266186/af018506-38ad-11e6-9976-352a50026874.png" width="50%"></th>
 	</tr>
 </table>
