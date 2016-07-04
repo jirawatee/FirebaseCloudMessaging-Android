@@ -1,4 +1,4 @@
-# FCM (Firebase Cloud Messaging)
+# Firebase Cloud Messaging (FCM)
 FCM is just a demo of Android Application which implement Firebase Cloud Messaging. It made for Google I/O Extended 2016 Bangkok 
 
 ## Prerequisites
