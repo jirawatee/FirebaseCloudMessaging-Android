@@ -47,3 +47,5 @@ proguard/
 
 # Keystore files
 *.jks
+
+google-services.json
