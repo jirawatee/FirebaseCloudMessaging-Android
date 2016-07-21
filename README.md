@@ -31,5 +31,3 @@ FCM is just a demo of Android Application which implement Firebase Cloud Messagi
 ```FCM
 https://docs.google.com/presentation/d/1HPLk1PXaGUjqTlPB6RHsgrTunJNo10kbGZ-JX_7JELw/edit?usp=sharing
 ```
-### Video
-[![FCM](http://img.youtube.com/vi/sioEY4tWmLI/0.jpg)](http://www.youtube.com/watch?v=sioEY4tWmLI "Firebase Cloud Messaging")
