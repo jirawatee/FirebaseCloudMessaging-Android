@@ -11,31 +11,32 @@
 		android:supportsRtl="true"
 		android:theme="@style/AppTheme">
 
-		<service android:name="com.example.fcm.MyFirebaseMessagingService">
+		<service android:name=".MyFirebaseMessagingService">
 			<intent-filter>
 				<action android:name="com.google.firebase.MESSAGING_EVENT"/>
 			</intent-filter>
 		</service>
 
-		<service android:name="com.example.fcm.MyFirebaseInstanceIDService">
+		<service android:name=".MyFirebaseInstanceIDService">
 			<intent-filter>
 				<action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
 			</intent-filter>
 		</service>
 
-		<activity android:name="com.example.fcm.MainActivity">
+		<activity android:name=".MainActivity">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN"/>
 				<category android:name="android.intent.category.LAUNCHER"/>
 			</intent-filter>
 		</activity>
 
-		<activity android:name="com.example.fcm.SecondActivity">
+		<activity android:name=".SecondActivity">
 			<intent-filter>
-				<action android:name="OPEN_ACTIVITY_1" />
-				<category android:name="android.intent.category.DEFAULT" />
+				<action android:name="OPEN_ACTIVITY_1"/>
+				<category android:name="android.intent.category.DEFAULT"/>
 			</intent-filter>
 		</activity>
+
 	</application>
 
 </manifest>
