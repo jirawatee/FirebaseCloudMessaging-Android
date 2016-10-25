@@ -55,7 +55,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 				.setContentIntent(pendingIntent)
 				.setContentInfo("Hello")
 				.setLargeIcon(icon)
-				.setColor(Color.YELLOW)
+				.setColor(Color.RED)
 				.setLights(Color.RED, 1000, 300)
 				.setDefaults(Notification.DEFAULT_VIBRATE)
 				.setSmallIcon(R.mipmap.ic_launcher);
