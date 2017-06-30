@@ -48,4 +48,6 @@ proguard/
 # Keystore files
 *.jks
 
+.externalNativeBuild
+
 google-services.json

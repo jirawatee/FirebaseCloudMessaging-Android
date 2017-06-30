@@ -91,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
 			jNotification.put("sound", "default");
 			jNotification.put("badge", "1");
 			jNotification.put("click_action", "OPEN_ACTIVITY_1");
+			jNotification.put("icon", "ic_launcher");
 
 			jData.put("picture_url", "http://opsbug.com/static/google-io.jpg");
 
