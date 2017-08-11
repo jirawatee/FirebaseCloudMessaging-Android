@@ -2,18 +2,18 @@
 
 buildscript {
 	repositories {
-		maven { url 'https://maven.google.com' }
+		google()
 		jcenter()
 	}
 	dependencies {
-		classpath 'com.android.tools.build:gradle:2.3.3'
+		classpath 'com.android.tools.build:gradle:3.0.0-beta1'
 		classpath 'com.google.gms:google-services:3.1.0'
 	}
 }
 
 allprojects {
 	repositories {
-		maven { url 'https://maven.google.com' }
+		google()
 		jcenter()
 	}
 }
@@ -23,6 +23,7 @@ task clean(type: Delete) {
 }
 
 ext {
-	supportLibraryVersion = '25.4.0'
-	firebaseLibraryVersion = '11.0.2'
+	supportLibraryVersion = '26.0.1'
+	firebaseLibraryVersion = '11.0.4'
+	compileAndTargetSdk = 26
 }
