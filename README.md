@@ -3,7 +3,7 @@ FCM is just a demo of Android Application which implement Firebase Cloud Messagi
 
 ## Prerequisites
 * Supported Android 4.0 (Ice cream) and newer
-* Google Play services 11.0.2 or newer
+* Google Play services 11.0.4 or newer
 * Android Studio 2.3 or higher
 * google-services.json in app-level folder
 
