@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
 	compileSdkVersion compileAndTargetSdk
-	buildToolsVersion "26.0.1"
+	buildToolsVersion "26.0.2"
 
 	defaultConfig {
 		applicationId "com.example.fcm"
@@ -32,8 +32,8 @@ android {
 }
 
 dependencies {
-	compile "com.android.support:appcompat-v7:$supportLibraryVersion"
-	compile "com.google.firebase:firebase-messaging:$firebaseLibraryVersion"
+	implementation "com.android.support:appcompat-v7:$supportLibraryVersion"
+	implementation "com.google.firebase:firebase-messaging:$firebaseLibraryVersion"
 }
 
 apply plugin: 'com.google.gms.google-services'
