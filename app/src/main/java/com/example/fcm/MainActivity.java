@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		mTextView = (TextView) findViewById(txt);
+		mTextView = findViewById(txt);
 
 		Bundle bundle = getIntent().getExtras();
 		if (bundle != null) {
@@ -91,9 +91,9 @@ public class MainActivity extends AppCompatActivity {
 			jNotification.put("sound", "default");
 			jNotification.put("badge", "1");
 			jNotification.put("click_action", "OPEN_ACTIVITY_1");
-			jNotification.put("icon", "ic_launcher");
+			jNotification.put("icon", "ic_notification");
 
-			jData.put("picture_url", "http://opsbug.com/static/google-io.jpg");
+			jData.put("picture", "http://opsbug.com/static/google-io.jpg");
 
 			switch(type) {
 				case "tokens":

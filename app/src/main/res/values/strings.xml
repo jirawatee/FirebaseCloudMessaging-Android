@@ -1,13 +1,12 @@
 <resources>
 	<string name="app_name">FCM</string>
-
 	<string name="btn_send_token">Send Token</string>
 	<string name="btn_send_tokens">Send Tokens</string>
 	<string name="btn_send_topic">Send Topic</string>
 	<string name="btn_show_token">Show Token</string>
 	<string name="btn_subscribe_news">Subscribe (News)</string>
 	<string name="btn_unsubscribe_news">Unsubscribe (News)</string>
-
+	<string name="notification_channel_id">default</string>
 	<string name="result">Something will happen here&#8230;</string>
 	<string name="subscribed">Subscribed to news topic</string>
 	<string name="unsubscribed">Unsubscribed from news topic</string>

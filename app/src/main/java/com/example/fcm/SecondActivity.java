@@ -10,7 +10,7 @@ public class SecondActivity extends AppCompatActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_second);
 
-		TextView txt = (TextView) findViewById(R.id.textView);
+		TextView txt = findViewById(R.id.textView);
 
 		Bundle bundle = getIntent().getExtras();
 		if (bundle != null) {

@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-	compileSdkVersion compileAndTargetSdk
+	compileSdkVersion compileAndTargetSdkVersion
 	buildToolsVersion "26.0.2"
 
 	defaultConfig {
 		applicationId "com.example.fcm"
-		minSdkVersion 25
-		targetSdkVersion compileAndTargetSdk
+		minSdkVersion compileAndTargetSdkVersion
+		targetSdkVersion compileAndTargetSdkVersion
 		versionCode 1
 		versionName "1.0"
 		resConfigs('en', 'xxxhdpi')

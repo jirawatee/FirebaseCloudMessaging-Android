@@ -14,6 +14,7 @@ FCM is just a demo of Android Application which implement Firebase Cloud Messagi
 * Send message with **a token**, **token group**, **a topic**, **condition**
 * Handle message both **foreground** and **background**
 * Customize notification
+* Support notification channel for Android 0 or newer
 
 ## Limitation in the message payload
 * Notification : 2KB limit and a predefined set of user-visible keys
