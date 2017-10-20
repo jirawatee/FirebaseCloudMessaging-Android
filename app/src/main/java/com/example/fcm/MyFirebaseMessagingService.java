@@ -26,6 +26,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 	public static final String FCM_PARAM = "picture";
 	private static final String CHANNEL_NAME = "FCM";
 	private static final String CHANNEL_DESC = "Firebase Cloud Messaging";
+	private int numMessages = 0;
 
 	@Override
 	public void onMessageReceived(RemoteMessage remoteMessage) {
@@ -57,6 +58,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 				.setColor(getColor(R.color.colorAccent))
 				.setLights(Color.RED, 1000, 300)
 				.setDefaults(Notification.DEFAULT_VIBRATE)
+				.setNumber(++numMessages)
 				.setSmallIcon(R.drawable.ic_notification);
 
 		try {
@@ -65,7 +67,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 				URL url = new URL(picture);
 				Bitmap bigPicture = BitmapFactory.decodeStream(url.openConnection().getInputStream());
 				notificationBuilder.setStyle(
-					new NotificationCompat.BigPictureStyle().bigPicture(bigPicture).setSummaryText(notification.getBody())
+						new NotificationCompat.BigPictureStyle().bigPicture(bigPicture).setSummaryText(notification.getBody())
 				);
 			}
 		} catch (IOException e) {
@@ -85,9 +87,12 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 			channel.setLightColor(Color.RED);
 			channel.enableVibration(true);
 			channel.setVibrationPattern(new long[]{100, 200, 300, 400, 500});
+
+			assert notificationManager != null;
 			notificationManager.createNotificationChannel(channel);
 		}
 
+		assert notificationManager != null;
 		notificationManager.notify(0, notificationBuilder.build());
 	}
 }
