@@ -4,7 +4,7 @@ buildscript {
 		jcenter()
 	}
 	dependencies {
-		classpath 'com.android.tools.build:gradle:3.0.1'
+		classpath 'com.android.tools.build:gradle:3.1.0'
 		classpath 'com.google.gms:google-services:3.2.0'
 	}
 }
@@ -22,6 +22,6 @@ task clean(type: Delete) {
 
 ext {
 	supportLibraryVersion = '27.1.0'
-	firebaseLibraryVersion = '12.0.0'
+	firebaseLibraryVersion = '12.0.1'
 	compileAndTargetSdkVersion = 27
 }
