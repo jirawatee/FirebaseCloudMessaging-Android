@@ -39,7 +39,7 @@ dependencies {
 	implementation ("com.android.support:appcompat-v7:$supportLibraryVersion") {
 		force = true
 	}
-	implementation "com.google.firebase:firebase-messaging:$firebaseLibraryVersion"
+	implementation "com.google.firebase:firebase-messaging:15.0.2"
 }
 
 apply plugin: 'com.google.gms.google-services'

@@ -5,7 +5,7 @@ buildscript {
 	}
 	dependencies {
 		classpath 'com.android.tools.build:gradle:3.1.2'
-		classpath 'com.google.gms:google-services:3.2.1'
+		classpath 'com.google.gms:google-services:4.0.0'
 	}
 }
 
@@ -22,6 +22,5 @@ task clean(type: Delete) {
 
 ext {
 	supportLibraryVersion = '27.1.1'
-	firebaseLibraryVersion = '15.0.0'
 	compileAndTargetSdkVersion = 27
 }
