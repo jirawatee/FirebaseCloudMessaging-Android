@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
 	compileSdkVersion compileAndTargetSdkVersion
-	buildToolsVersion '28.0.3'
+	buildToolsVersion '29.0.0'
 
 	defaultConfig {
 		applicationId "com.example.fcm"
@@ -36,11 +36,11 @@ android {
 }
 
 dependencies {
-	implementation("com.android.support:appcompat-v7:$supportLibraryVersion") {
+	implementation('androidx.appcompat:appcompat:1.0.0') {
 		force = true
 	}
-	implementation 'com.google.firebase:firebase-core:16.0.9'
-	implementation 'com.google.firebase:firebase-messaging:18.0.0'
+	implementation 'com.google.firebase:firebase-core:17.0.0'
+	implementation 'com.google.firebase:firebase-messaging:19.0.1'
 }
 
 apply plugin: 'com.google.gms.google-services'
